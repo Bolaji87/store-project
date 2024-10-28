@@ -3,6 +3,8 @@
 .bigText {
   font-size: 25px;
   font-weight: 700;
+  background-color: #0a0909;
+  color: #fff;
 }
 nav {
   display: flex;
