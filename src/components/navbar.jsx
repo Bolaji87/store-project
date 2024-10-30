@@ -2,6 +2,7 @@ import React from "react";
 import { AiOutlineSearch } from "react-icons/ai";
 import { HiShoppingCart } from "react-icons/hi";
 import "./styles.css";
+import { Link } from "react-router-dom";
 
 const Navbar = ({ cartItemsCount, isLogged }) => {
   return (
@@ -11,9 +12,9 @@ const Navbar = ({ cartItemsCount, isLogged }) => {
           Tee-<span style={{ fontWeight: "400" }}>store</span>
         </h2>
         <ul className="nav-ul">
-          <a href="##">Products</a>
-          <span className="about-span">Shop</span>
-          <a href="##">About</a>
+          <Link href="##">Products</Link>
+          <Link className="about-span">Shop</Link>
+          <Link href="##">About</Link>
         </ul>
       </div>
 
