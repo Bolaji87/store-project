@@ -6,6 +6,7 @@ import ProductCard from "../components/productCard";
 function Products() {
   const [allProducts, setAllProducts] = useState([]);
   const [products, setProducts] = useState([]);
+  const [active, setActive] = useState("All");
 
   function handleFilterProducts(productCategory = null) {
     if (productCategory) {
@@ -29,22 +30,35 @@ function Products() {
   }, []);
   return (
     <div className="products-cont">
-      <div className="category-select">
+      <div className={"category-select"}>
         <span
-          onClick={() => handleFilterProducts()}
-          className="select-cat-span"
+          onClick={() => {
+            handleFilterProducts();
+            setActive("All");
+          }}
+          className={`select-cat-span ${active === "All" ? "cat-active" : ""}`}
         >
           All
         </span>
         <span
-          onClick={() => handleFilterProducts(ALLOWED_CATEGORIES.WOMENS)}
-          className="select-cat-span"
+          onClick={() => {
+            handleFilterProducts(ALLOWED_CATEGORIES.WOMENS);
+            setActive("women's");
+          }}
+          className={`select-cat-span ${
+            active === "women's" ? "cat-active" : ""
+          }`}
         >
           Women's
         </span>
         <span
-          onClick={() => handleFilterProducts(ALLOWED_CATEGORIES.MENS)}
-          className="select-cat-span"
+          onClick={() => {
+            handleFilterProducts(ALLOWED_CATEGORIES.MENS);
+            setActive("men's");
+          }}
+          className={`select-cat-span ${
+            active === "men's" ? "cat-active" : ""
+          }`}
         >
           Men's
         </span>
