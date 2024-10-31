@@ -2,17 +2,20 @@ import React from "react";
 import { AiOutlineSearch } from "react-icons/ai";
 import { HiShoppingCart } from "react-icons/hi";
 import "./styles.css";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const Navbar = ({ cartItemsCount, isLogged }) => {
+  const navigate = useNavigate();
   return (
     <nav>
       <div className="nav-cont-1">
-        <h2 className="nav-h2">
+        <h2 className="nav-h2" onClick={() => navigate("/")}>
           Tee-<span style={{ fontWeight: "400" }}>store</span>
         </h2>
         <ul className="nav-ul">
-          <Link href="##">Products</Link>
+          <Link to="/products" href="##">
+            Products
+          </Link>
           <Link className="about-span">Shop</Link>
           <Link href="##">About</Link>
         </ul>
