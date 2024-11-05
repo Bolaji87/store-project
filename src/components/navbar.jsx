@@ -4,8 +4,16 @@ import { HiShoppingCart } from "react-icons/hi";
 import "./styles.css";
 import { Link, useNavigate } from "react-router-dom";
 
-const Navbar = ({ cartItemsCount, isLogged }) => {
+const Navbar = ({ cartItemsCount, isLogged, categoryRef }) => {
   const navigate = useNavigate();
+
+  function handleNavigateScroll() {
+    navigate("/");
+
+    setTimeout(function () {
+      categoryRef.current?.scrollIntoView({ behavior: "smooth" });
+    }, 300);
+  }
   return (
     <nav>
       <div className="nav-cont-1">
@@ -16,7 +24,9 @@ const Navbar = ({ cartItemsCount, isLogged }) => {
           <Link to="/products" href="##">
             Products
           </Link>
-          <Link className="about-span">Shop</Link>
+          <span onClick={handleNavigateScroll} className="about-span">
+            Shop
+          </span>
           <Link href="##">About</Link>
         </ul>
       </div>

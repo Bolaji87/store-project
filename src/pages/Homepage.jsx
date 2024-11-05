@@ -6,13 +6,13 @@ import Hero from "../components/hero";
 import CategoryCard from "../components/categoryCard";
 import "./styles.css";
 
-function Homepage() {
+function Homepage({ categoryRef }) {
   return (
     <div>
       <Hero />
       <hr />
       <h2>Categories</h2>
-      <div className="cat-cont">
+      <div className="cat-cont" ref={categoryRef}>
         <CategoryCard imgSrc={MensClothing} title={"Men's"} />
         <CategoryCard imgSrc={WomensClothing} title={"Women's"} />
       </div>
