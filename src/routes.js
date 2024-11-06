@@ -5,6 +5,7 @@ import Homepage from "./pages/Homepage";
 const Products = lazy(() => import("./pages/Products"));
 const Cart = lazy(() => import("./pages/Cart"));
 const CheckOut = lazy(() => import("./pages/CheckOut"));
+const Login = lazy(() => import("./pages/Login"));
 
 export const ALLOWED_CATEGORIES = {
   MENS: "men's clothing",
@@ -30,5 +31,10 @@ export const Approutes = [
     path: "/checkout",
     component: CheckOut,
     requiresAuth: true,
+  },
+  {
+    path: "/login",
+    component: Login,
+    requiresAuth: false,
   },
 ];
