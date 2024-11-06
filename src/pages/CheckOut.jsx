@@ -19,7 +19,7 @@ function CheckOut({ user, _cartItems }) {
             {" "}
             Biller:{" "}
             <span>
-              {user.name.firstName} {user.name.lastName}
+              {user.name.firstname} {user.name.lastname}
             </span>
           </h5>
           <button style={{ alignSelf: "center", width: "100%" }}>
