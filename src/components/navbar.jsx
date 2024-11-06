@@ -34,7 +34,7 @@ const Navbar = ({ cartItemsCount, isLogged, categoryRef }) => {
       <div className="nav-cont-2">
         {!isLogged && <button className="login-nav">Login</button>}
         <AiOutlineSearch size={25} />
-        <a href="##" className="cart-icon-cont">
+        <Link to={"/cart"} className="cart-icon-cont">
           <span className="nav-cart-count">{cartItemsCount}</span>
           <HiShoppingCart
             size={25}
@@ -44,7 +44,7 @@ const Navbar = ({ cartItemsCount, isLogged, categoryRef }) => {
               marginBottom: "-5px",
             }}
           />
-        </a>
+        </Link>
       </div>
     </nav>
   );
