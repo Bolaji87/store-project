@@ -5,7 +5,7 @@ import { ALLOWED_CATEGORIES } from "../routes";
 import ProductCard from "../components/productCard";
 import { useParams } from "react-router-dom";
 
-function Products() {
+function Products({ setCartItems }) {
   const { category } = useParams();
   const [allProducts, setAllProducts] = useState([]);
   const [products, setProducts] = useState([]);
@@ -102,6 +102,7 @@ function Products() {
                   description={product.description}
                   categoryName={product.category}
                   productName={product.title}
+                  setCartItems={setCartItems}
                 />
               )
           )}
