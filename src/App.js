@@ -11,11 +11,14 @@ function App() {
     cartItems: [],
   };
   const [cartItems, setCartItems] = useState(initialCartState);
+  const [user, setUser] = useState({});
+  const [isLogged, setIsLogged] = useState(false);
 
   const categoryRef = useRef(null);
   return (
     <div>
       <Navbar
+        isLogged={isLogged}
         categoryRef={categoryRef}
         cartItemsCount={cartItems.numberOfItems}
       />
@@ -32,6 +35,8 @@ function App() {
                   categoryRef={categoryRef}
                   _cartItems={cartItems}
                   setCartItems={setCartItems}
+                  setUser={setUser}
+                  setIsLogged={setIsLogged}
                 />
               }
             />
