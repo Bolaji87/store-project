@@ -13,3 +13,11 @@ export async function fetchCategoryProducts(_category) {
   );
   return response.data;
 }
+
+export async function authenticateUser(email, password) {
+  const response = await axios.get(`${BASE_URL}/users`);
+  const authenticate = response.data.find(
+    (user) => user.email === email && user.password === password
+  );
+  return authenticate;
+}
